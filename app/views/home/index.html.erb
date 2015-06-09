@@ -1,0 +1,6 @@
+<%= link_to 'Registrarme', new_user_registration_path %>
+<%= link_to 'Iniciar sesión', new_user_session_path %>
+<% if user_signed_in? %>
+  <%= link_to 'Cerrar sesión', destroy_user_session, method: :delete %>
+  <%= link_to 'Editar mi cuenta', edit_user_registration %>
+<% end %>
