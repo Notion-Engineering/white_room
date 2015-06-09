@@ -1,6 +1,11 @@
-<%= link_to 'Registrarme', new_user_registration_path %>
-<%= link_to 'Iniciar sesión', new_user_session_path %>
-<% if user_signed_in? %>
-  <%= link_to 'Cerrar sesión', destroy_user_session, method: :delete %>
-  <%= link_to 'Editar mi cuenta', edit_user_registration %>
-<% end %>
+<div class="text-center">
+  <h1>White Room</h1>
+  <br>
+  <% if user_signed_in? %>
+    <%= link_to 'Cerrar sesión', destroy_user_session_path, method: :delete, class: 'button' %>
+    <%= link_to 'Editar mi cuenta', edit_user_registration_path, class: 'button' %>
+  <% else %>
+    <%= link_to 'Registrarme', new_user_registration_path, class: 'button' %>
+    <%= link_to 'Iniciar sesión', new_user_session_path, class: 'button' %>
+  <% end %>
+</div>
